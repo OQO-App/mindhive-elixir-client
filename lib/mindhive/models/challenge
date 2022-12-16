@@ -1,0 +1,255 @@
+#  Challenge:
+#    type: object
+#    properties:
+#      id:
+#        title: Id
+#        type: string
+#      status:
+#        title: Status
+#        type: integer
+#        enum:
+#          - 10
+#          - 20
+#          - 100
+#          - 999
+#      title:
+#        title: Title
+#        type: string
+#        maxLength: 5000
+#        x-nullable: true
+#      short_descr:
+#        title: Short descr
+#        type: string
+#        maxLength: 5000
+#        x-nullable: true
+#      descr:
+#        title: Descr
+#        type: string
+#        maxLength: 5000
+#        x-nullable: true
+#      author:
+#        title: Author
+#        type: string
+#        readOnly: true
+#      background_info:
+#        title: Background info
+#        type: string
+#        maxLength: 5000
+#        x-nullable: true
+#      structure_items:
+#        type: array
+#        items:
+#          $ref: '#/definitions/StructureItem'
+#      hero_image_url:
+#        title: Hero image url
+#        type: string
+#        maxLength: 255
+#        x-nullable: true
+#      hero_image_author:
+#        title: Hero image author
+#        type: string
+#        maxLength: 5000
+#        x-nullable: true
+#      hero_image_username:
+#        title: Hero image username
+#        type: string
+#        maxLength: 5000
+#        x-nullable: true
+#      custom_image:
+#        title: Custom image
+#        type: string
+#        readOnly: true
+#        x-nullable: true
+#        format: uri
+#      resource_links:
+#        type: array
+#        items:
+#          $ref: '#/definitions/ResourceLink'
+#      categories:
+#        type: array
+#        items:
+#          $ref: '#/definitions/Category'
+#      tags:
+#        type: array
+#        items:
+#          $ref: '#/definitions/Tag'
+#      date_from:
+#        title: Date from
+#        type: string
+#        format: date-time
+#        x-nullable: true
+#      date_to:
+#        title: Date to
+#        type: string
+#        format: date-time
+#        x-nullable: true
+#      posted_as_ct_type:
+#        title: Posted as ct type
+#        type: integer
+#        maximum: 2147483647
+#        minimum: -2147483648
+#      posted_as_ct_id:
+#        title: Posted as ct id
+#        type: integer
+#        maximum: 2147483647
+#        minimum: -2147483648
+#      contributors:
+#        type: array
+#        items:
+#          $ref: '#/definitions/Participant'
+#      leads:
+#        type: array
+#        items:
+#          $ref: '#/definitions/Lead'
+#      visibility_scope:
+#        title: Visibility scope
+#        type: integer
+#        enum:
+#          - 10
+#          - 20
+#      join_scope:
+#        title: Join scope
+#        type: integer
+#        enum:
+#          - 10
+#          - 20
+#      join_type:
+#        title: Join type
+#        type: integer
+#        enum:
+#          - 10
+#          - 20
+#          - 30
+#      notify_contributors_end_challenge:
+#        title: Notify contributors end challenge
+#        type: boolean
+#      allow_contributors_add_resources:
+#        title: Allow contributors add resources
+#        type: boolean
+#      notify_owner_by_email:
+#        title: Notify owner by email
+#        type: boolean
+#      send_owner_weekly_summary:
+#        title: Send owner weekly summary
+#        type: boolean
+#      open_discussion_dates:
+#        title: Open discussion dates
+#        type: boolean
+#      discussion_date_from:
+#        title: Discussion date from
+#        type: string
+#        format: date-time
+#        x-nullable: true
+#      discussion_date_to:
+#        title: Discussion date to
+#        type: string
+#        format: date-time
+#        x-nullable: true
+#      open_ideation_dates:
+#        title: Open ideation dates
+#        type: boolean
+#      ideation_date_from:
+#        title: Ideation date from
+#        type: string
+#        format: date-time
+#        x-nullable: true
+#      ideation_date_to:
+#        title: Ideation date to
+#        type: string
+#        format: date-time
+#        x-nullable: true
+#      notify_contributors_end_discussion:
+#        title: Notify contributors end discussion
+#        type: boolean
+#      last_engaged:
+#        title: Last engaged
+#        type: string
+#        format: date-time
+#      engagement_level:
+#        title: Engagement level
+#        type: integer
+#        maximum: 2147483647
+#        minimum: 0
+#      closing_msg:
+#        title: Closing msg
+#        type: string
+#        maxLength: 5000
+#        x-nullable: true
+#      followers:
+#        type: array
+#        items:
+#          $ref: '#/definitions/UserProfile'
+#        readOnly: true
+#      messages:
+#        type: array
+#        items:
+#          $ref: '#/definitions/Message'
+#      challenge_url:
+#        title: Challenge url
+#        type: string
+#        format: uri
+#        maxLength: 255
+#        x-nullable: true
+#      challenge_admin_people_url:
+#        title: Challenge admin people url
+#        type: string
+#        format: uri
+#        maxLength: 255
+#        x-nullable: true
+#      challenge_duration_was_updated:
+#        title: Challenge duration was updated
+#        type: boolean
+#      challenge_people_section_was_updated:
+#        title: Challenge people section was updated
+#        type: boolean
+#      challenge_messages_section_was_updated:
+#        title: Challenge messages section was updated
+#        type: boolean
+#      award_msg:
+#        title: Award msg
+#        type: string
+#        maxLength: 5000
+#        x-nullable: true
+#      award_participants:
+#        type: array
+#        items:
+#          $ref: '#/definitions/Participant'
+#      top_insights:
+#        type: array
+#        items:
+#          $ref: '#/definitions/HighlightCategory'
+#      are_failed_invites:
+#        title: Are failed invites
+#        type: boolean
+#      top_insights_msg:
+#        title: Top insights msg
+#        type: string
+#        maxLength: 5000
+#        x-nullable: true
+#      created_at:
+#        title: Created at
+#        type: string
+#        format: date-time
+#      number_contributors:
+#        title: Number contributors
+#        type: string
+#        readOnly: true
+#      number_posts:
+#        title: Number posts
+#        type: string
+#        readOnly: true
+#      invite_message:
+#        title: Invite message
+#        type: string
+#        maxLength: 5000
+#        x-nullable: true
+#      allow_anonymous_posting:
+#        title: Allow anonymous posting
+#        type: boolean
+#      organisation:
+#        $ref: '#/definitions/Organisation'
+
+defmodule MindHive.Model.Challenge do
+
+
+end
