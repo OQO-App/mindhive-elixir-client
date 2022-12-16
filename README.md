@@ -1,2 +1,4 @@
-# mindhive-elixir-client
+mindhive-elixir-client
+=============================
+
 MindHive Elixir API
