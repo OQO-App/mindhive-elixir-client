@@ -43,7 +43,7 @@ defmodule MindHive.Mixfile do
       {:tesla, "~> 1.4"},
       {:hackney, "~> 1.18"},
   
-    
+      {:junit_formatter, "~> 3.3", only: [:test]},
       {:dialyxir, "~> 1.0", runtime: false},
       {:earmark,      "~> 1.4", runtime: false},
       {:ex_doc, "~> 0.27", runtime: false},
