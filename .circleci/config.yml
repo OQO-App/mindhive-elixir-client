@@ -46,6 +46,6 @@ jobs:
           key: dialyzer-cache
           paths: "_build/test/dialyxir*.plt"
       - store_test_results:
-          - path: _build/test/lib/mindhive/results.xml
+         path: _build/test/lib/mindhive/results.xml
       - store_artifacts:
           path: ./cover
