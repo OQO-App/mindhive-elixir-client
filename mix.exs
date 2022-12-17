@@ -39,12 +39,14 @@ defmodule MindHive.Mixfile do
 
   defp deps do
     [
-      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
-      {:earmark,      "~> 1.4",  only: :dev},
-      {:ex_doc, "~> 0.27", only: :dev, runtime: false},
       {:jason, "~> 1.4"},
       {:tesla, "~> 1.4"},
-      {:hackney, "~> 1.18"}
+      {:hackney, "~> 1.18"},
+  
+    
+      {:dialyxir, "~> 1.0", runtime: false},
+      {:earmark,      "~> 1.4", runtime: false},
+      {:ex_doc, "~> 0.27", runtime: false},
     ]
   end
 
