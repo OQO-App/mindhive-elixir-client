@@ -41,7 +41,7 @@ jobs:
           paths: "_build"
       - run: mix do xref deprecated --include-siblings, xref unreachable --include-siblings, xref graph --format stats
       - run: mix test --cover
-      - run: mix dialyzer --halt-exit-status
+      - run: mix dialyzer
       - save_cache:
           key: dialyzer-cache
           paths: "_build/test/dialyxir*.plt"
