@@ -20,6 +20,9 @@ jobs:
           keys:
             - v1-build-cache-{{ .Branch }}
             - v1-build-cache
+      - restore_cache:  # restores saved plt cache
+          keys:
+            - dialyzer-cache
       - run: mix do deps.get, compile
       - save_cache:
           key: v1-mix-cache-{{ .Branch }}-{{ checksum "mix.lock" }}
@@ -36,6 +39,13 @@ jobs:
       - save_cache:
           key: v1-build-cache
           paths: "_build"
-      - run: mix test
+      - run: mix do xref deprecated --include-siblings, xref unreachable --include-siblings, xref graph --format stats
+      - run: mix test --coverage
+      - run: mix dialyzer --halt-exit-status
+      - save_cache:
+          key: dialyzer-cache
+          paths: "_build/test/dialyxir*.plt"
       - store_test_results:
-          path: _build/test/lib/mindhive
+          - path: _build/test/lib/mindhive/results.xml
+      - store_artifacts:
+          path: ./cover
